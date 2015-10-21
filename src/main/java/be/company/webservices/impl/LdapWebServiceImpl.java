@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 import java.util.List;
+
+import static org.springframework.ldap.query.LdapQueryBuilder.query;
 
 @Component("ldapWebService")
 public class LdapWebServiceImpl implements LdapWebService {
@@ -17,20 +17,14 @@ public class LdapWebServiceImpl implements LdapWebService {
     @Autowired
     private PersonRepo personRepo;
 
-//    @Override
-//    public List<Person> getAll() {
-//        return (List<Person>) personRepo.findAll();
-//    }
-
     @Override
-    public Person getAll() {
-        throw new RuntimeException("everything is ok");
-//        return ((List<Person>)personRepo.findAll()).get(0);
+    public List<Person> getAll() {
+        return (List<Person>) personRepo.findAll();
     }
 
     @Override
-    public Person getPerson(@PathParam("id") Long id) {
-        return null;
+    public Person getPerson(@PathParam("uid") String uid) {
+        return personRepo.findOne(query().where("objectclass").is("person").and("uid").is(uid));
     }
 
     @Override
@@ -39,12 +33,13 @@ public class LdapWebServiceImpl implements LdapWebService {
     }
 
     @Override
-    public void updatePerson(@PathParam("id") Long id, Person person) {
-
+    public void updatePerson(@PathParam("uid") String uid, Person person) {
+        person.setUid(uid);
+        personRepo.save(person);
     }
 
     @Override
-    public void deletePerson(@PathParam("id") Long id) {
+    public void deletePerson(@PathParam("uid") String uid) {
 
     }
 }

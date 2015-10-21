@@ -1,9 +1,9 @@
 (function() {
     angular.module('ldapApp.services', [])
     .factory('Ldap', ['$resource', function($resource) {
-        return $resource('http://localhost:8080/ldap/:id',
+        return $resource('http://localhost:8080/ldap/:uid',
         {
-            id:'@id'
+            uid:'@uid'
         },
         {
             update: {

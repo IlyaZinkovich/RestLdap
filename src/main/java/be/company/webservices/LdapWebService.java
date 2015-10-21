@@ -10,26 +10,23 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 public interface LdapWebService {
 
-//    @GET
-//    List<Person> getAll();
+    @GET
+    List<Person> getAll();
 
     @GET
-    Person getAll();
-
-    @GET
-    @Path("/{id}")
-    Person getPerson(@PathParam("id") Long id);
+    @Path("/{uid}")
+    Person getPerson(@PathParam("uid") String uid);
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     void createPerson(Person person);
 
     @PUT
-    @Path("/{id}")
-    void updatePerson(@PathParam("id") Long id, Person person);
+    @Path("/{uid}")
+    void updatePerson(@PathParam("uid") String id, Person person);
 
     @DELETE
-    @Path("/{id}")
-    void deletePerson(@PathParam("id") Long id);
+    @Path("/{uid}")
+    void deletePerson(@PathParam("uid") String uid);
 
 }

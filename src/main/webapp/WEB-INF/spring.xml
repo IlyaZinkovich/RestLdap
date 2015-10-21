@@ -38,12 +38,12 @@
         <jaxrs:features>
         <cxf:logging/>
         </jaxrs:features>
-        <jaxrs:providers>
-            <bean class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>
-        </jaxrs:providers>
         <!--<jaxrs:providers>-->
-            <!--<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />-->
+            <!--<bean class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider"/>-->
         <!--</jaxrs:providers>-->
+        <jaxrs:providers>
+            <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+        </jaxrs:providers>
     </jaxrs:server>
 
 </beans>

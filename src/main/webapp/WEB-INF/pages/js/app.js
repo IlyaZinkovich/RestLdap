@@ -10,7 +10,7 @@
             templateUrl:'partials/ldap.html',
             controller:'LdapListController'
         }).state('viewLdap',{
-           url:'/ldap/:id/view',
+           url:'/ldap/:uid/view',
            templateUrl:'partials/ldap-view.html',
            controller:'LdapViewController'
         }).state('newLdap',{
@@ -18,7 +18,7 @@
             templateUrl:'partials/ldap-save.html',
             controller:'LdapCreateController'
         }).state('editLdap',{
-            url:'/ldap/:id/edit',
+            url:'/ldap/:uid/edit',
             templateUrl:'partials/ldap-save.html',
             controller:'LdapEditController'
         });
