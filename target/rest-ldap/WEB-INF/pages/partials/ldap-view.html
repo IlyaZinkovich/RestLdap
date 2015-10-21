@@ -1,0 +1,30 @@
+<table class="table movietable">
+    <tr>
+        <td><h3>Details for {{ldap.fullName}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Ldap Surname</td>
+        <td>{{ldap.surname}}</td>
+    </tr>
+    <tr>
+        <td>Mail</td>
+        <td>{{ldap.mail}}</td>
+    </tr>
+    <!--<tr>-->
+        <!--<td>Creation Date</td>-->
+        <!--<td>{{ldap.creationDate | date:'yyyy-MM-dd'}}</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td>Modification Date</td>-->
+        <!--<td>{{ldap.modificationDate | date:'yyyy-MM-dd HH:mm:ss'}}</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td>Author</td>-->
+        <!--<td>{{ldap.author.name}}</td>-->
+    <!--</tr>-->
+</table>
+<div>
+    <a class="btn btn-primary" ui-sref="editLdap({id:ldap.id})">Edit</a>
+</div>
+<pager total-items="totalItems" ng-model="currentPage"></pager>

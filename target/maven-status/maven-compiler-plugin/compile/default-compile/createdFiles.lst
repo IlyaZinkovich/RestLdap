@@ -1,0 +1,6 @@
+be\company\repository\PersonRepo.class
+be\company\repository\impl\LdapRepoImpl.class
+be\company\webservices\impl\LdapWebServiceImpl.class
+be\company\filter\CORSFilter.class
+be\company\domain\Person.class
+be\company\webservices\LdapWebService.class
